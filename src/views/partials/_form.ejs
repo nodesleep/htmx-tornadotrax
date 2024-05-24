@@ -1,0 +1,46 @@
+<form
+    id="filterForm"
+    method="POST"
+    action="/filter"
+    hx-post="/filter"
+    hx-target="#tornadoTable tbody"
+    hx-trigger="submit"
+>
+    <label for="startDate">Start Date:</label>
+    <input
+        type="date"
+        id="startDate"
+        name="startDate"
+        value="<%= query.startDate %>"
+        required
+    />
+
+    <label for="endDate">End Date:</label>
+    <input
+        type="date"
+        id="endDate"
+        name="endDate"
+        value="<%= query.endDate %>"
+        required
+    />
+
+    <label for="mag">EF-Rating:</label>
+    <input
+        type="text"
+        id="mag"
+        name="mag"
+        value="<%= query.mag %>"
+        placeholder="e.g., 3,4,5"
+    />
+
+    <label for="state">State:</label>
+    <input
+        type="text"
+        id="state"
+        name="state"
+        value="<%= query.state %>"
+        placeholder="e.g., KS,IA,MO"
+    />
+
+    <button type="submit">Filter</button>
+</form>
